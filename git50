@@ -1,0 +1,9 @@
+#!/bin/bash
+for ((i = 0; i < 50; i++))
+do
+ base64 /dev/urandom | head -c 4000 > file.txt
+ echo "$i" >> Yahoo
+ git add .
+ git commit -m "commit $i"
+ git push origin master
+done
